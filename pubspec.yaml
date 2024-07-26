@@ -1,0 +1,30 @@
+name: lanars_test
+description: "Lanars test task"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.6
+  dio: ^5.5.0+1
+  get_it: ^7.7.0
+  pretty_dio_logger: ^1.4.0
+  daily_extensions: ^1.1.9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  json_serializable: ^6.8.0
+  build_runner: ^2.4.11
+
+flutter:
+  uses-material-design: true
+
