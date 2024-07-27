@@ -12,6 +12,7 @@ class StylesConst {
     fontFamily: _robotoRegular,
     fontWeight: FontWeight.w400,
     fontSize: 16,
+    height: 1,
     letterSpacing: 0.5,
   );
   static final bodyLargeSysLightOnSurfaceVariantOpacity38 = TextStyle(

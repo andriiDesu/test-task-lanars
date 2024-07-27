@@ -5,8 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lanars_test/core/navigation/route_state.dart';
 
 part 'base_state.dart';
+part 'base_event.dart';
 
-abstract class BaseBloc<S extends BaseState> extends Bloc {
+abstract class BaseBloc<S extends BaseState, E extends BaseEvent> extends Bloc<E, S> {
   BaseBloc(super.initialState);
 
   final routeCubit = RouteCubit();
@@ -49,7 +50,7 @@ abstract class BaseBloc<S extends BaseState> extends Bloc {
 }
 
 class RouteCubit extends Cubit<RouteState> {
-  RouteCubit() : super(const RouteState(''));
+  RouteCubit() : super(RouteState());
 }
 
 class ProgressCubit extends Cubit<bool> {

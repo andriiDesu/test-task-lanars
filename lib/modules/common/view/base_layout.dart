@@ -10,10 +10,11 @@ abstract class BaseLayout extends StatefulWidget {
   const BaseLayout({super.key});
 }
 
-abstract class BaseLayoutState<S extends BaseState, L extends BaseLayout,
-    B extends BaseBloc<S>> extends State<L> {
+abstract class BaseLayoutState<S extends BaseState, L extends BaseLayout, E extends BaseEvent,
+    B extends BaseBloc<S, E>> extends State<L> {
   @protected
   late final B bloc;
+
   @protected
   bool inSafeArea = true;
 
@@ -46,6 +47,7 @@ abstract class BaseLayoutState<S extends BaseState, L extends BaseLayout,
         }
       },
       child: BlocBuilder<ProgressCubit, bool>(
+        bloc: bloc.progressCubit,
         builder: (_, inProgress) => PopScope(
           canPop: inProgress,
           child: IgnorePointer(

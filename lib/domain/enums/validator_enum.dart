@@ -1,0 +1,1 @@
+enum ValidatorEnum { email, password }

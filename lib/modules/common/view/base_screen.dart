@@ -4,8 +4,8 @@ import 'package:lanars_test/core/navigation/route_state.dart';
 import 'package:lanars_test/modules/common/bloc/base_bloc.dart';
 import 'package:lanars_test/modules/common/view/base_layout.dart';
 
-abstract class BaseScreen<S extends BaseState, B extends BaseBloc<S>,
-    L extends BaseLayout> extends StatelessWidget {
+abstract class BaseScreen<S extends BaseState, E extends BaseEvent,
+    B extends BaseBloc<S, E>, L extends BaseLayout> extends StatelessWidget {
   const BaseScreen({super.key});
 
   @protected
@@ -33,7 +33,7 @@ abstract class BaseScreen<S extends BaseState, B extends BaseBloc<S>,
   @protected
   @mustCallSuper
   void onRoute(BuildContext context, RouteState state) {
-    if(state is BackRouteState) {
+    if (state is BackRouteState) {
       Navigator.pop(context);
     }
   }

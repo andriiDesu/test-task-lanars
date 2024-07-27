@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lanars_test/modules/login/view/login_screen.dart';
 
 const loginRoute = '/';
 
@@ -8,7 +9,9 @@ class RouteManager {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case loginRoute:
-        return MaterialPageRoute(builder: (_) => Container());
+        return MaterialPageRoute(
+          builder: (_) => const LoginScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
