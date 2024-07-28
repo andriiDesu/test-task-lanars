@@ -18,6 +18,10 @@ class LoginBloc extends BaseBloc<LoginState, LoginEvent> {
 
   final AuthorizationRepository _authorizationRepository;
 
+  ///Method used to called on login button press. Calls repository to get user
+  ///data from API.
+  ///
+  ///Ends prematurely if fields have any errors and do not pass validation.
   void _onSignIn(SignInEvent event, Emitter<LoginState> emit) async {
     final passwordValidationResult =
         ValidatorUtil.validatePassword(event.logInRequest.password);
@@ -44,6 +48,8 @@ class LoginBloc extends BaseBloc<LoginState, LoginEvent> {
     );
   }
 
+  ///Method used to clear errors for appropriate fields, when user interacts
+  ///with a field after getting an error.
   void _clearError(ClearErrorEvent event, Emitter<LoginState> emit) {
     emit(
       LoginState(

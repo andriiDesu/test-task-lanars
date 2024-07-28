@@ -15,6 +15,8 @@ class FeedBloc extends BaseBloc<FeedState, FeedEvent> {
 
   final FeedRepository _feedRepository;
 
+  ///Method used to get a list of [CuratedPhoto] from API.
+  ///Applies local alphabetical sorting after getting a proper response.
   void _onGetPhotos(GetPhotosEvent event, Emitter<FeedState> emit) async {
     await execute(
       _feedRepository.getCuratedPhotosList(),
@@ -35,6 +37,7 @@ class FeedBloc extends BaseBloc<FeedState, FeedEvent> {
     );
   }
 
+  ///Method used to update [FeedState] with a list of [CuratedPhoto] from API.
   void _onUpdatePhotos(
     UpdatePhotosEvent event,
     Emitter<FeedState> emit,

@@ -14,6 +14,8 @@ class NetworkService {
   @protected
   late Dio dio;
 
+  ///Base method for communication between client and server.
+  ///Supports CRUD operations with [HttpMethod].
   Future<T> request<T>(
     String path,
     HttpMethod method, {

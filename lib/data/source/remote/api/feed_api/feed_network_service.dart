@@ -36,6 +36,7 @@ class FeedNetworkService extends NetworkService {
   Dio get dio => _dio;
 }
 
+///Interceptor used for passing api key inside of a header.
 QueuedInterceptorsWrapper _authInterceptor() {
   return QueuedInterceptorsWrapper(
     onRequest: (request, handler) async {

@@ -8,6 +8,7 @@ class AuthorizationRepository {
 
   final AuthorizationApi _authorizationApi;
 
+  ///Method used to get user data from API.
   Future<UserData> getUser(UserLogInRequest logInRequest) async {
     final requestDto = _toUserLogInRequestDto(logInRequest);
 
@@ -16,6 +17,7 @@ class AuthorizationRepository {
     return response.toUserData();
   }
 
+  ///Helper method used to turn model from bloc into a data transfer object.
   UserLogInRequestDto _toUserLogInRequestDto(UserLogInRequest logInRequest) {
     return UserLogInRequestDto(
       email: logInRequest.email,

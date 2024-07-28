@@ -9,6 +9,8 @@ class AuthorizationApi {
   final AuthorizationNetworkService _authNetworkService;
   static const _getUserPath = '';
 
+  ///Method for getting user data from API using appropriate network service.
+  ///Also possible to assign headers and query parameters if needed.
   Future<UserDataDto> getUserData(UserLogInRequestDto logInRequest) {
     return _authNetworkService.request(
       _getUserPath,

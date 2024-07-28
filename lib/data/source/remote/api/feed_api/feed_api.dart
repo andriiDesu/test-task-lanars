@@ -14,6 +14,9 @@ class FeedApi {
 
   static const _curatedPhotosKey = 'photos';
 
+  ///Method used to get a list of [CuratedPhotoDto] from API. It's possible to
+  ///assign query parameters headers if needed.
+  ///Authorization is handled by an interceptor inside the network service.
   Future<List<CuratedPhotoDto>> getCuratedPhotosList() async {
     return await _feedNetworkService.request<List<CuratedPhotoDto>>(
       _getCuratedPhotosPath,

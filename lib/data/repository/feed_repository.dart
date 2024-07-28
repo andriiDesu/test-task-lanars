@@ -6,6 +6,9 @@ class FeedRepository {
 
   final FeedApi _feedApi;
 
+  ///Method used for getting a list of curated photos from API.
+  ///Turns data from a data transfer object to a regular model when getting a
+  ///response.
   Future<List<CuratedPhoto>> getCuratedPhotosList() async {
     final photosList = await _feedApi.getCuratedPhotosList();
     final list = <CuratedPhoto>[];
