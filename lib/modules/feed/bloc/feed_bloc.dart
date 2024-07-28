@@ -10,6 +10,7 @@ part 'feed_state.dart';
 class FeedBloc extends BaseBloc<FeedState, FeedEvent> {
   FeedBloc(this._feedRepository) : super(const FeedState()) {
     on<GetPhotosEvent>(_onGetPhotos);
+    on<UpdatePhotosEvent>(_onUpdatePhotos);
   }
 
   final FeedRepository _feedRepository;
@@ -18,11 +19,30 @@ class FeedBloc extends BaseBloc<FeedState, FeedEvent> {
     await execute(
       _feedRepository.getCuratedPhotosList(),
       retry: () => _onGetPhotos(event, emit),
-      onSuccess: (result) {
-        emit(
-          FeedState(curatedPhotos: result),
+      onSuccess: (result) async {
+        result.sort(
+          (a, b) => a.photographer.compareTo(
+            b.photographer,
+          ),
+        );
+
+        add(
+          UpdatePhotosEvent(
+            curatedPhotos: result,
+          ),
         );
       },
+    );
+  }
+
+  void _onUpdatePhotos(
+    UpdatePhotosEvent event,
+    Emitter<FeedState> emit,
+  ) {
+    emit(
+      FeedState(
+        curatedPhotos: event.curatedPhotos,
+      ),
     );
   }
 }

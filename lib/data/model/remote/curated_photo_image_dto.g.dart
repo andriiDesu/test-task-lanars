@@ -9,5 +9,5 @@ part of 'curated_photo_image_dto.dart';
 CuratedPhotoImageDto _$CuratedPhotoImageDtoFromJson(
         Map<String, dynamic> json) =>
     CuratedPhotoImageDto(
-      json['medium'] as String,
+      json['tiny'] as String,
     );

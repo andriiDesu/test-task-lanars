@@ -1,4 +1,3 @@
-import 'package:daily_extensions/daily_extensions.dart';
 import 'package:lanars_test/data/source/remote/api/feed_api/feed_api.dart';
 import 'package:lanars_test/domain/models/curated_photo.dart';
 
@@ -9,10 +8,14 @@ class FeedRepository {
 
   Future<List<CuratedPhoto>> getCuratedPhotosList() async {
     final photosList = await _feedApi.getCuratedPhotosList();
-    final curatedPhotos = photosList.mapToList(
-      (e) => e.toCuratedPhoto(),
-    );
+    final list = <CuratedPhoto>[];
 
-    return curatedPhotos;
+    for(var i = 0; i < photosList.length; i++) {
+      final photo = photosList[i].toCuratedPhoto();
+
+      list.add(photo);
+    }
+
+    return list;
   }
 }

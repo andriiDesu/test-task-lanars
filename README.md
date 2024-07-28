@@ -32,6 +32,10 @@ Before you begin, ensure you have the latest version of Flutter installed:
 
 - [Flutter](https://docs.flutter.dev/release/archive)
 
+You also need a Pexels account, you can create it here:
+
+- [Pexels](https://www.pexels.com/api/new/)
+
 ### Clone the Repository
 
 1. Open your terminal or command prompt.
@@ -51,12 +55,18 @@ Before you begin, ensure you have the latest version of Flutter installed:
 3. Run code generation, to ensure that models are up to date with the command:
     dart run build_runner build
 
+4. Add an api_key.json file with your Pexels API key, it should look like this:
+
+   {
+      "pexels_key": "your_api_key"
+   }
+
 ### Build and Run
 
 1. Connect your device or start an emulator.
 
 2. To build and run the project, use the following command:
-    flutter run
+    flutter run --dart-define-from-file=path/from/content/root/api_key.json
 
 This will build the project and install it on your connected device or emulator.
 

@@ -8,6 +8,8 @@ class ColorConst {
   static const Color sysLightOnSurfaceVariant = Color(0xFF43474E);
   static const Color sysLightOnSurface = Color(0xFF1A1C1E);
   static const Color sysLightOutline = Color(0xFF73777F);
+
+  static const Color sysLightOutlineVariant = Color(0xFFC3C6CF);
   static const Color sysLightError = Color(0xFFBA1A1A);
   static const Color sysLightInverseSurface = Color(0xFF2F3033);
   static const Color sysLightInverseOnSurface = Color(0xFFF1F0F4);

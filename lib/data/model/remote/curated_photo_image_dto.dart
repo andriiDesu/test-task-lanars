@@ -5,19 +5,19 @@ part 'curated_photo_image_dto.g.dart';
 
 @JsonSerializable(createToJson: false)
 class CuratedPhotoImageDto {
-  CuratedPhotoImageDto(this.mediumImage);
+  CuratedPhotoImageDto(this.smallImage);
 
   factory CuratedPhotoImageDto.fromJson(Map<String, dynamic> data) =>
       _$CuratedPhotoImageDtoFromJson(data);
 
-  static const _imageKey = 'medium';
+  static const _imageKey = 'tiny';
 
   @JsonKey(name: _imageKey)
-  final String mediumImage;
+  final String smallImage;
 
   CuratedPhotoImage toCuratedPhotoImage() {
     return CuratedPhotoImage(
-      mediumImage: mediumImage,
+      mediumImage: smallImage,
     );
   }
 }
