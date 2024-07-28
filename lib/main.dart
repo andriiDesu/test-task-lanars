@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lanars_test/core/di/dependency_provider.dart';
 import 'package:lanars_test/core/navigation/route_manager.dart';
+import 'package:lanars_test/modules/login/view/login_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,7 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Lanars test',
-      initialRoute: loginRoute,
+      initialRoute: LoginScreen.routeName,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteManager.generateRoute,
     );

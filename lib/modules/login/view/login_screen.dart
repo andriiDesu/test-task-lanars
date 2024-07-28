@@ -9,7 +9,7 @@ class LoginScreen
     extends BaseScreen<LoginState, LoginEvent, LoginBloc, LoginLayout> {
   const LoginScreen({super.key});
 
-  static const routeName = '/Login_screen';
+  static const routeName = '/';
 
   @override
   LoginLayout get layout => const LoginLayout();
