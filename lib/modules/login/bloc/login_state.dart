@@ -1,7 +1,13 @@
 part of 'login_bloc.dart';
 
 class LoginState extends BaseState {
-  const LoginState();
+  const LoginState({
+    this.hasEmailError = false,
+    this.hasPasswordError = false,
+  });
 
-// final bool
+  final bool hasEmailError;
+  final bool hasPasswordError;
+
+  bool get hasErrors => hasEmailError || hasPasswordError;
 }

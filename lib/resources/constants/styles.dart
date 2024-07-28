@@ -20,6 +20,7 @@ class StylesConst {
     fontFamily: _robotoRegular,
     fontWeight: FontWeight.w400,
     fontSize: 16,
+    height: 1,
     letterSpacing: 0.5,
   );
 
@@ -50,6 +51,7 @@ class StylesConst {
     fontFamily: _robotoRegular,
     fontWeight: FontWeight.w400,
     fontSize: 12,
+    height: 1,
   );
 
   static const headlineLargeSysLightOnSurface = TextStyle(

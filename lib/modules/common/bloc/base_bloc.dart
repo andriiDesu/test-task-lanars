@@ -15,13 +15,13 @@ abstract class BaseBloc<S extends BaseState, E extends BaseEvent> extends Bloc<E
   late final errorCubit = ErrorCubit();
 
   @protected
-  void execute<T>(
+  Future<void> execute<T>(
     Future<T> action, {
     required void Function() retry,
     void Function(T result)? onSuccess,
     void Function(ErrorState error)? onError,
     bool withProgress = true,
-  }) {
+  }) async {
     if (withProgress) showProgress();
     action.then((result) {
       onSuccess?.call(result);

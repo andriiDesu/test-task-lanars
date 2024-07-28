@@ -23,6 +23,7 @@ class Application extends StatelessWidget {
     return const MaterialApp(
       title: 'Lanars test',
       initialRoute: loginRoute,
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteManager.generateRoute,
     );
   }

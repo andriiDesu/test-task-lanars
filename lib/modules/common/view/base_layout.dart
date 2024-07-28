@@ -3,15 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lanars_test/core/extensions/build_context_extension.dart';
 import 'package:lanars_test/data/source/remote/network_errors.dart';
 import 'package:lanars_test/modules/common/bloc/base_bloc.dart';
-import 'package:lanars_test/modules/common/view/widgets/default_snack_bar.dart';
 import 'package:lanars_test/resources/constants/colors.dart';
+import 'package:lanars_test/resources/constants/styles.dart';
 
 abstract class BaseLayout extends StatefulWidget {
   const BaseLayout({super.key});
 }
 
-abstract class BaseLayoutState<S extends BaseState, L extends BaseLayout, E extends BaseEvent,
-    B extends BaseBloc<S, E>> extends State<L> {
+abstract class BaseLayoutState<S extends BaseState, L extends BaseLayout,
+    E extends BaseEvent, B extends BaseBloc<S, E>> extends State<L> {
   @protected
   late final B bloc;
 
@@ -102,8 +102,16 @@ abstract class BaseLayoutState<S extends BaseState, L extends BaseLayout, E exte
   }) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: DefaultSnackBar(
-          message: message,
+        elevation: 3,
+        showCloseIcon: true,
+        margin: const EdgeInsets.fromLTRB(8, 0, 8, 24),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+        content: Text(
+          message,
+          style: StylesConst.bodyMediumSysLightInverseOnSurface,
         ),
       ),
     );
