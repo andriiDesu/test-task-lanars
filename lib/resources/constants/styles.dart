@@ -15,6 +15,15 @@ class StylesConst {
     height: 1,
     letterSpacing: 0.5,
   );
+
+  static const bodyLargeSysLightOnSurface = TextStyle(
+    color: ColorConst.sysLightOnSurface,
+    fontFamily: _robotoRegular,
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+    height: 1,
+    letterSpacing: 0.5,
+  );
   static final bodyLargeSysLightOnSurfaceVariantOpacity38 = TextStyle(
     color: ColorConst.sysLightOnSurfaceVariantOpacity38,
     fontFamily: _robotoRegular,
@@ -26,6 +35,29 @@ class StylesConst {
 
   static const bodyMediumSysLightInverseOnSurface = TextStyle(
     color: ColorConst.sysLightInverseOnSurface,
+    fontFamily: _robotoRegular,
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+    letterSpacing: 0.25,
+  );
+
+  static const titleMediumSysLightInverseOnSurface = TextStyle(
+    color: ColorConst.sysLightInverseOnSurface,
+    fontFamily: _robotoMedium,
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+    letterSpacing: 0.15,
+  );
+
+  static const titleLargeSysLightOnSurface = TextStyle(
+    color: ColorConst.sysLightOnSurface,
+    fontFamily: _robotoMedium,
+    fontWeight: FontWeight.w400,
+    fontSize: 22,
+  );
+
+  static const bodyMediumSysLightOnSurfaceVariant = TextStyle(
+    color: ColorConst.sysLightOnSurfaceVariant,
     fontFamily: _robotoRegular,
     fontWeight: FontWeight.w400,
     fontSize: 14,
